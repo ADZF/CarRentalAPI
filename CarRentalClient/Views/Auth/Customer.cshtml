@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LayoutAdmin";
+}
+
+<h4>Dashboard for Admin</h4>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalData">
+    Add Customer
+</button>
+
+
+<!-- Tabel Topic-->
+<div class="card shadow mb-4" style="margin-top:10px;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover display nowrap dataTable dtr-inline table table-bordered table-striped text-center table-secondary table-hover" id="tableUser">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NIK</th>
+                        <th>Name</th>
+                        <th>BirthDate</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class=" open-modal modal fade" id="modalData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal Data User</h5>
+                <button type="button" class="close" onclick="window.location.reload()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" id="formValidation" name="nameModal" method="post">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>NIK</label>
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK....">
+                        </div>
+                    </div>
+                    <div class="row mb-2"> 
+                        <div class="col">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name....">
+                        </div>
+                        <div class="col">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone....">
+                        </div>
+                        <div class="col">
+                            <label>Birth Date</label>
+                            <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Birth Date....">
+                        </div>
+                        
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender" required value="gender">
+                                <option value="-">-- Select Gender --</option>
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class=" tombol btn btn-secondary" data-dismiss="modal" onclick="window.location.reload()">Close</button>
+                <button id="btnAddUser" class="btn btn-primary" onclick="InsertDataCustomer();">Add</button>
+                <button id="btnUpdateUser" type="button" class="btn btn-primary" style="display:none;" onclick="UpdateUser();">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<!--<div class="modal fade" id="topicModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Topic</h5>
+                <button type="button" onclick="window.location.reload()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formValidation" name="nameModal">
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-sm-3 control-label text-right">Topic Name</label>
+                            <div class="col-sm-8">
+                                <input name="inputTopicName"  type="text" class="form-control" id="topicName" placeholder="Topic Name" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-sm-3 control-label text-right">Topic Description</label>
+                            <div class="col-sm-8">
+                                <textarea name="inputTopicDesc" type="text" class="form-control" id="topicDesc" placeholder="Topic Description" value=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class=" tombol btn btn-secondary" data-dismiss="modal" onclick="window.location.reload()">CLose</button>
+                <button id="btnAdd" type="submit" class="btn btn-primary">Add</button>
+                <button id="btnUpdate" type="button" class="btn btn-primary" style="display:none;" onclick="Update();">Update</button>
+            </div>
+        </div>
+    </div>
+</div>-->

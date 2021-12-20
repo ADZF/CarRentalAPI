@@ -1,0 +1,128 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Login Employee";
+    Layout = "_LayoutLogin";
+}
+
+<div class="container">
+    <div class="img">
+        <img src="~/assets/img/hero-img.png" />
+    </div>
+    <div class="login-container">
+        <form method="post" class="user" action="/Employees/Auth">
+            <img class="avator" src="~/assets/img/car.jpg" style="padding-bottom:10px">
+            <h3>Login to Your account</h3>
+            <div class="input-div" one>
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>
+                    <h5>Email</h5>
+                    <input class="input" name="email" id="EmailEmp" type="text" />
+
+                </div>
+            </div>
+            <div class="input-div" two>
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div>
+                    <h5>password</h5>
+                    <input class="input" name="password" id="PasswordEmp" type="password" validate />
+                </div>
+            </div>
+
+            <a class="nav-link scrollto" href="https://localhost:44344/Home/RegistEmp">Sign Up</a>
+            @*<a class="nav-link scrollto" data-bs-toggle="modal" data-bs-target="#modalDataEmpployee">Not have an acount ?</a>*@
+            <a asp-controller="Home" asp-action="ResetPassEmp">Forgot password ?</a>
+            <input type="submit" class="btn" value="Login" />
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class=" open-modal modal fade" id="modalDataEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Register as Trainer</h4>
+                <button type="button" class="close" onclick="window.location.reload()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" id="formValidation" name="nameModal" method="post">
+                    <div class="row mb-2">
+                        <div class="col" hidden>
+                            <input type="text" class="form-control" id="employeeId" name="employeeId" placeholder="">
+                            <input type="text" class="form-control" id="accountId" name="accountId" placeholder="">
+                        </div>
+                        <div class="col">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name....">
+                        </div>
+                        <div class="col">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone....">
+                        </div>
+                        <div class="col">
+                            <label>Birth Date</label>
+                            <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Birth Date....">
+                        </div>
+                        <div class="col" id="hireDate1" hidden>
+                            <label>Hire Date</label>
+                            <input type="date" class="form-control" id="hireDate" name="hireDate" placeholder="Hire Date....">
+                        </div>
+                        <div class="col" id="hireDate2" style="display:none;" hidden>
+                            <label>Hire Date</label>
+                            <input type="text" class="form-control" id="tanggal" name="hireDate" placeholder="Hire Date....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email....">
+                        </div>
+                        <div class="col" id="hidePass">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password....">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender" required value="gender">
+                                <option value="-">Select Gender</option>
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>Your CV Links</label>
+                            <input type="text" class="form-control" id="cv" name="cv" placeholder="Your CV Link....">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class=" tombol btn btn-secondary" data-dismiss="modal" onclick="window.location.reload()">Close</button>
+                <button id="btnUpdateEmp" type="button" class="btn btn-primary" onclick="InsertDataEmpIndex();">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
